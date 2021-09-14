@@ -8,7 +8,6 @@ import styled from "styled-components";
 const StyledLink = styled(props => <Link {...props} />)`
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
-        color: inherit;
         cursor: pointer;
     }
 `

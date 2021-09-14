@@ -1,10 +1,13 @@
-import * as React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import ThemeProvider from "../theme";
 import NavBtn from "./nav-btn";
+import Nav from "./nav";
+
+
 
 
 
@@ -18,12 +21,16 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const [menuOpen, setMenuOpen] = useState(false)
+
 
   return (
     <ThemeProvider>
-      <NavBtn/>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      
+      <NavBtn open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}/>
+      <Nav menuOpen={menuOpen}/>
+          
+    
         <main>
           {children}
         </main>
