@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from "framer-motion"
+import { PrimaryLink } from './link'
 
 
 
@@ -20,10 +21,12 @@ const StyledNav = styled(motion.nav)`
 const NavList = styled.ul`
     list-style: none;
     text-align: center;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
 `
 const Li = styled.li`
     color: var(--color-cream);
-    ${'' /* display: inline-block; */}
     text-transform: uppercase;
     cursor: pointer;
     font-size: 3rem;
@@ -32,11 +35,41 @@ const Li = styled.li`
     user-select: none;
     -webkit-user-select: none; /* Safari */
     -webkit-touch-callout: none; /* iOS Safari */
+    position: relative;
+    margin-bottom: 1rem;
+
+    a {
+        position: relative;
+        z-index: 20
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        left: -5px;
+        height: 100%;
+        width: 3px;
+        background-color: var(--color-cream);
+        transform: scaleY(0);
+        transition: ease-in transform .15s, 
+                    width .15s cubic-bezier(1,0,0,1) .15s,
+                    background-color .1s
+    }
 
 
     &:hover {
         transform: scale(1.2);
+        color: var(--color-orange);
+
+        &::before {
+            transform: scaleY(1);
+            width: 105%;
+        }
     }
+
+    
 
 `
 
@@ -54,9 +87,9 @@ const Nav = ({menuOpen}) => {
                 exit={{ opacity: 0 }}
             >
             <NavList>
-                <Li>Home</Li>
-                <Li>Portfolio</Li>
-                <Li>Contact</Li>
+                <Li><a>Home</a></Li>
+                <Li><a>Portfolio</a></Li>
+                <Li><a>Contact</a></Li>
             </NavList>
                 
             </StyledNav>

@@ -13,10 +13,15 @@ const StyledNavBtn = styled.div`
     transition: all .3s ease;
     transform-origin: center;
 
+    div {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
     &:hover {
         transform: scale(1.1)
     }
-
     span, span::before, span::after {
         width: 40px;
         height: 5px;
@@ -24,8 +29,6 @@ const StyledNavBtn = styled.div`
         background-color: ${props => props.open ? 'var(--color-cream)' : 'var(--color-primary)'};
         display: inline-block;
         transition: all .2s;
-
-        
     }
     span {
         background-color: ${props => props.open ? 'transparent' : 'var(--color-primary)'};
@@ -50,7 +53,9 @@ const StyledNavBtn = styled.div`
 const NavBtn = ({open, onClick}) => {
     return (
         <StyledNavBtn open={open === true ? true : false} onClick={onClick}>
-            <span>&nbsp;</span> 
+            <div>
+                <span>&nbsp;</span> 
+            </div>
         </StyledNavBtn>
     )
 }
