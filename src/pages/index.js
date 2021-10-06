@@ -84,6 +84,8 @@ const IndexPage = () => (
           <SkillBar><p>JavaScript</p></SkillBar>
           <SkillBar><p>PHP</p></SkillBar>
           <SkillBar><p>React</p></SkillBar>
+          <SkillBar><p>Python</p></SkillBar>
+
 
         </div>
         </FlexContainer>
