@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from "framer-motion"
 import { PrimaryLink } from './link'
+import { Link } from 'gatsby'
 
 
 
@@ -40,7 +41,9 @@ const Li = styled.li`
 
     a {
         position: relative;
-        z-index: 20
+        z-index: 20;
+        text-decoration: none;
+        color: inherit
     }
 
     &::before{
@@ -87,9 +90,10 @@ const Nav = ({menuOpen}) => {
                 exit={{ opacity: 0 }}
             >
             <NavList>
-                <Li><a>Home</a></Li>
-                <Li><a>Portfolio</a></Li>
-                <Li><a>Contact</a></Li>
+                <Li><Link to="/">Home</Link></Li>
+                <Li><Link to="/page-2">About</Link></Li>
+                <Li><Link to="/portfolio/">Portfolio</Link></Li>
+                <Li><Link>Contact</Link></Li>
             </NavList>
                 
             </StyledNav>

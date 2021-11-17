@@ -12,6 +12,7 @@ const StyledNavBtn = styled.div`
     cursor: pointer;
     transition: all .3s ease;
     transform-origin: center;
+    user-select: none;
 
     div {
         position: relative;

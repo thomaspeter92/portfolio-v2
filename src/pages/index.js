@@ -6,90 +6,25 @@ import Seo from "../components/seo"
 import Container from "../components/container"
 import styled from "styled-components"
 import { FlexContainer } from "../components/utilities/utilities"
+import Header from "../components/header"
+import { graphql } from "gatsby"
 
 
-const Title = styled.h3`
-  color: var(--color-primary);
-  border-bottom: 5px solid var(--color-orange);
-  width: fit-content;
-  text-transform: uppercase;
-  margin: 2rem auto;
-`
-const Subheading = styled.h4`
-  color: var(--color-primary);
-  width: fit-content;
-  text-transform: uppercase;
-  margin: .75rem auto;
-`
-const PhotoBox = styled.div `
-  border-radius: 50%;
-  display: flex;
-  jusitfy-content: center;
-  align-items: center;
-  overflow: hidden;
-  border: 5px solid var(--color-orange);
-  height: 175px;
-  width: 175px;
-  margin: auto;
-`
 
-const SkillBar = styled.div `
-  width: 90%;
-  height: 26px;
-  background-color: var(--color-cream);
-  margin: auto;
-  margin-bottom: 1rem;
-  position: relative;
+// export const query = graphql`
+// query SiteTitleQuery {
+//   site {
+//     siteMetadata {
+//       title
+//     }
+//   }
+// }`
 
-  p{
-    color: var(--color-orange);
-    text-align: right;
-    margin-right: 1rem;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    background-color: var(--color-primary)
-  }
-`
-
-
-const IndexPage = () => (
+const IndexPage = ({data}) => (
   <Layout>
     <Seo title="Home" />
-      <Container>
-        <Title>
-          Skills
-        </Title>
-        <FlexContainer align="center" justify="space-between">
-        <div style={{width: '47.5%', textAlign:'center'}}>
-          <PhotoBox>
-            <StaticImage width={200} height={200} imgStyle={{objectFit: 'contain'}} src="../images/my-pic.jpeg"></StaticImage>
-          </PhotoBox>
-          <Subheading>
-              About Me
-          </Subheading>
-          <p>
-            Thanks for visiting my portfolio page. I am a junior full stack developer currently living in Seoul, South Korea. I have over a years experience in web development, and even more in design.
-          <br/><br/>
-            I started my journey in tech by completing a full-stack web development bootcamp in 2020, after which I have been working as a front end developer. I am also currently enrolled as a Master of Computer Science student at Keele University. 
-          </p>
-        </div>
-        <div style={{width: '47.5%'}}>
-          <SkillBar><p>HTML</p></SkillBar>
-          <SkillBar><p>CSS</p></SkillBar>
-          <SkillBar><p>JavaScript</p></SkillBar>
-          <SkillBar><p>PHP</p></SkillBar>
-          <SkillBar><p>React</p></SkillBar>
-          <SkillBar><p>Python</p></SkillBar>
+    <Header />
 
-
-        </div>
-        </FlexContainer>
-      </Container>
   </Layout>
 )
 

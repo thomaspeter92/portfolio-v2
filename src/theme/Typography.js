@@ -10,35 +10,46 @@ const BodyStyle = css`
 `
 const H1Style = css`
     font-size: 55px;
-    line-height: 150%;
+    ${'' /* line-height: 150%; */}
     letter-spacing: 0.20px;
+    margin-bottom: 15px;
 `
 const H2Style = css`
     font-size: 40px;
     font-weight: 500;
-    line-height: 150%;
+    ${'' /* line-height: 150%; */}
     letter-spacing: 0.20px;
+    margin-bottom: 15px;
+
 `
 const H3Style = css`
     font-size: 32px;
-    line-height: 150%;
+    ${'' /* line-height: 150%; */}
     letter-spacing: 0.20px;
+    margin-bottom: 15px;
+
 `
 const H4Style = css`
     font-size: 24px;
-    line-height: 150%;
+    ${'' /* line-height: 150%; */}
     letter-spacing: 0.20px;
+    margin-bottom: 15px;
+
 `
 const H5Style = css`
     font-size: 16px;
-    line-height: 150%;
+    ${'' /* line-height: 150%; */}
     letter-spacing: 0.20px;
+    margin-bottom: 15px;
+
 `
 const ParagraphStyle = css`
     font-size: 16px;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: 0.20px;
+    margin-bottom: 15px;
+
 `
 
 const StyledTypography = createGlobalStyle`

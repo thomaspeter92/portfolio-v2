@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import { motion } from "framer-motion"
+
 import Header from "./header"
 import ThemeProvider from "../theme";
 import NavBtn from "./nav-btn";
@@ -26,14 +28,22 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <NavBtn open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}/>
       <Nav menuOpen={menuOpen}/>
           
     
-        <main>
+        <motion.main
+        initial={{ opacity: 0,scale: 0.8}}
+          animate={{ opacity: 1, scale: 1}}
+          exit={{ opacity: 0, scale: 0.1}}
+          transition={{
+            type: "spring",
+            // mass: 0.35,
+            // stiffness: 75,
+            duration: 0.3
+          }}>
           {children}
-        </main>
+        </motion.main>
 
         <footer>
           © {new Date().getFullYear()}, Built by

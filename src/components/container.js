@@ -8,6 +8,9 @@ const StyledContainer = styled.div `
     @media(max-width: 770px) {
         ${'' /* width: 95%; */}
     }
+    @media(min-width: 1200px) {
+        width: 1000px;
+    }
 `
 
 const Container = ({children}) => (

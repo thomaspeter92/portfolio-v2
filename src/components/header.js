@@ -71,7 +71,7 @@ const Header = ({ siteTitle }) => {
           <h1>Title Goes Here</h1>
           <h2>Subtitle goes here. Subtitle goes here</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eligendi impedit saepe suscipit eaque architecto quo, est harum dolorem nulla, officia soluta fuga iste mollitia, explicabo qui sit debitis reiciendis.</p>
-          <Button to='/'>
+          <Button to='/page-2'>
             Button
           </Button>
         </div>

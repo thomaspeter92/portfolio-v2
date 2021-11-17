@@ -17,6 +17,7 @@ const CssReset = createGlobalStyle`
         min-height: 100%;
         min-width: 100%;
         font-family: "";
+        background-color: var(--color-cream);
     }
     #___gatsby #gatsby-focus-wrapper {
         min-height: 100vh;
