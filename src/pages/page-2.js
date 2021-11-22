@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Container from "../components/container"
 import { FlexContainer } from "../components/utilities/utilities"
 import { StaticImage } from "gatsby-plugin-image"
+import { motion, AnimatePresence } from "framer-motion"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -41,21 +42,27 @@ const SkillBar = styled.div `
   margin: auto;
   margin-bottom: 1rem;
   position: relative;
+  overflow: hidden;
 
   p{
     color: var(--color-orange);
     text-align: right;
     margin-right: 1rem;
+    position: relative;
+    z-index: 10
   }
 
-  &::before {
-    content: "";
+  span {
+    ${'' /* content: ""; */}
     position: absolute;
     height: 100%;
-    width: 50%;
-    background-color: var(--color-primary)
+    width: 1%;
+    background-color: var(--color-primary);
+    z-index: 0;
+    transform-origin: left;
   }
 `
+const skills = [['HTML', 90],['CSS', 80],['JavaScript', 75],['React', 70],['PHP', 55],['Python', 50]]
 
 const SecondPage = () => (
   <Layout>
@@ -78,12 +85,23 @@ const SecondPage = () => (
             </p>
           </div>
           <div style={{width: '47.5%'}}>
-            <SkillBar><p>HTML</p></SkillBar>
-            <SkillBar><p>CSS</p></SkillBar>
-            <SkillBar><p>JavaScript</p></SkillBar>
-            <SkillBar><p>PHP</p></SkillBar>
-            <SkillBar><p>React</p></SkillBar>
-            <SkillBar><p>Python</p></SkillBar>
+            {skills.map((skill, i) => (
+              <SkillBar>
+                <motion.span
+                initial={{ width:'0%'}}
+                animate={{ width: `${skill[1]}%`}}
+                // exit={{ width: '0%'}}
+                transition={{
+                  type: "spring", 
+                  bounce: 0.5,
+              
+                  duration: 1,
+                  delay: i * 0.2,
+                  ease: "easeOut",
+                }}></motion.span>
+                <p>{skill[0]}</p>
+              </SkillBar>
+            ))}
           </div>
         </FlexContainer>
         <Link style={{margin: '25px'}} to="/">Go back to the homepage</Link>

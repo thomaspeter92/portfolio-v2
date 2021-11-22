@@ -33,14 +33,14 @@ const Layout = ({ children }) => {
           
     
         <motion.main
-        initial={{ opacity: 0,scale: 0.8}}
-          animate={{ opacity: 1, scale: 1}}
-          exit={{ opacity: 0, scale: 0.1}}
+          initial={{y: '100%', opacity: 0,scale: 1}}
+          animate={{ y: 0, opacity: 1, scale: 1}}
+          exit={{y: '-100%', opacity: 0, scale: 1}}
           transition={{
             type: "spring",
             // mass: 0.35,
             // stiffness: 75,
-            duration: 0.3
+            duration: 0.4
           }}>
           {children}
         </motion.main>
