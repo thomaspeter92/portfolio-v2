@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import styled  from "styled-components";
 import Container from "./container"
 import { Button } from "./button";
-// import { FlexContainer } from "./utilities/utilities";
 import { StaticImage } from "gatsby-plugin-image";
 import HeaderAnimation from "./header-animation";
 
@@ -15,18 +14,20 @@ const StyledHeader = styled.header `
 
   display: flex;
   align-items: center;
-  background-color: var(--color-cream);
 
   @media(max-width: 770px) {
     padding: 2.5rem 0;
   }
 
-    h1 {
-      color: var(--color-primary)
-    }
-    h2{
-      color: var(--color-secondary)
-    }
+  h1 {
+    color: ${props => props.theme.cream}}
+  }
+  h2{
+    color: ${props => props.theme.orange}}
+  }
+  p {
+    color: ${props => props.theme.cream}}
+  }
 `
 
 const FlexContainer = styled.div `
@@ -77,9 +78,6 @@ const Header = ({ siteTitle }) => {
         </div>
         <div>
           <HeaderAnimation/>
-          {/* <StaticImage  
-          transformOptions={{fit: 'contain', cropFocus: 'attention'}}
-          alt="portrait of me" src="../images/portrait.png"/> */}
         </div>
       </FlexContainer>    
     </Container>

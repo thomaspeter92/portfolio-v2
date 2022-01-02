@@ -14,7 +14,7 @@ const StyledNav = styled(motion.nav)`
     z-index: 100;
     top: 0;
     left: 0;
-    background-color: var(--color-orange);
+    background-color: ${props => props.theme.orange};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,7 +27,7 @@ const NavList = styled.ul`
     align-items: center;
 `
 const Li = styled.li`
-    color: var(--color-cream);
+    color: ${props => props.theme.cream};
     text-transform: uppercase;
     cursor: pointer;
     font-size: 3rem;
@@ -54,7 +54,7 @@ const Li = styled.li`
         left: -5px;
         height: 100%;
         width: 3px;
-        background-color: var(--color-cream);
+        background-color:${props => props.theme.cream};
         transform: scaleY(0);
         transition: ease-in transform .15s, 
                     width .15s cubic-bezier(1,0,0,1) .15s,
@@ -64,7 +64,7 @@ const Li = styled.li`
 
     &:hover {
         transform: scale(1.2);
-        color: var(--color-orange);
+        color: ${props => props.theme.orange};
 
         &::before {
             transform: scaleY(1);
@@ -93,7 +93,8 @@ const Nav = ({menuOpen}) => {
                 <Li><Link to="/">Home</Link></Li>
                 <Li><Link to="/page-2">About</Link></Li>
                 <Li><Link to="/portfolio/">Portfolio</Link></Li>
-                <Li><Link>Contact</Link></Li>
+                {/* <Li><Link>Blog</Link></Li> */}
+                <Li><Link to='/contact'>Contact</Link></Li>
             </NavList>
                 
             </StyledNav>

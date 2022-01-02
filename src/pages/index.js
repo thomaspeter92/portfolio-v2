@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Container from "../components/container"
 import styled from "styled-components"
-import { FlexContainer } from "../components/utilities/utilities"
 import Header from "../components/header"
 import { graphql } from "gatsby"
 

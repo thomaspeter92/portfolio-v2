@@ -79,16 +79,17 @@ z-index: 20;
 height: 350px
 `
 
+
 const HeaderAnimation = () => {
     return (
-        <>
+      <>
             <Ellipse1/>
             <Ellipse2/>
             <Ellipse3/>
             <Code1/>
             <Code2/>
             <Portrait/>
-        </>
+            </>
     )
 }
 
