@@ -7,8 +7,6 @@ import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "../components/button";
 import { Modal } from "../components/modal"
-
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -208,7 +206,6 @@ const PortfolioPage = () => {
                                 duration: .5,
                                 delay: i * 0.2,
                                 ease: 'easeOut'
-                                
                             }}
                             >
                                 {proj}

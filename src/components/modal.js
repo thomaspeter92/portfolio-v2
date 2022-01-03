@@ -6,12 +6,12 @@ import styled from "styled-components"
 const ModalContainer = styled.div`
     width: 100vw;
     min-height: 100vh;
+    max-width: 100%;
     position: fixed;
     top:0;
     left:0;
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(2px);
-
 `
 const ModalInner = styled.div`
     position: absolute;
